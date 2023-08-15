@@ -31,7 +31,7 @@
 
     // Make a POST request to create a new comment
     axios
-      .post('http://localhost:8001/comments/', comment)
+      .post('https://comment-187a.onrender.com/comments/', comment)
       .then((response) => {
         // Handle the response here if needed
         console.log('Comment created successfully:', response.data);

@@ -21,7 +21,7 @@
           'Content-Type': 'application/json',
         };
         
-    const cartResponse = await axios.get(`http://localhost:3032/carts/user/${userId}`, { headers });
+    const cartResponse = await axios.get(`https://cart-5tg9.onrender.com/carts/user/${userId}`, { headers });
     console.log("Cart response: ", cartResponse.data)
     
     cartId = cartResponse.data._id;
@@ -40,7 +40,7 @@
       };
       
 
-      const response = await axios.post('http://localhost:3088/payments', {
+      const response = await axios.post('https://payment-yvbj.onrender.com/payments', {
         user_id: userId,
         type,
         details,

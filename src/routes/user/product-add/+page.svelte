@@ -18,7 +18,7 @@
 
     function fetchProducts() {
       axios
-        .get("http://127.0.0.1:3000/products")
+        .get("https://product-045e.onrender.com/products")
         .then((response) => (products = response.data))
         .catch((error) => console.error("Error fetching products:", error));
     }
@@ -39,7 +39,7 @@
     const userId = localStorage.getItem('userId');
     console.log(userId);
 
-    await fetch(`http://127.0.0.1:3032/carts/user/${userId}`, {headers: {
+    await fetch(`https://cart-5tg9.onrender.com/carts/user/${userId}`, {headers: {
       "Authorization": `Bearer ${jwtTokenFromStorage}`
     }})
       .then( async (res) => {
@@ -51,7 +51,7 @@
           };
 
           // Create a new cart
-          fetch('http://127.0.0.1:3032/carts', {
+          fetch('https://cart-5tg9.onrender.com/carts', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -76,7 +76,7 @@
           console.log("cart_id", cartData._id)
 
           // Update the cart
-          fetch(`http://127.0.0.1:3032/carts/${cartData._id}`, {
+          fetch(`https://cart-5tg9.onrender.com/carts/${cartData._id}`, {
             method: 'PUT',
             headers: {
               "Authorization": `Bearer ${jwtTokenFromStorage}`,

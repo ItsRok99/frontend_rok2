@@ -57,7 +57,7 @@
     };
 
     // Make a POST request to create a new user
-    fetch('http://localhost:8000/users/', {
+    fetch('https://user-xojp.onrender.com/users/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -74,7 +74,7 @@
         name = '';
         surname = '';
         type = 'user';
-        window.location.assign('http://localhost:5173/admin/user-list');
+        window.location.assign('https://frontend-rok.onrender.com/admin/user-list');
       })
       .catch((error) => {
         console.error('Error creating user:', error);

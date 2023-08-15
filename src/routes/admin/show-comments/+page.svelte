@@ -19,7 +19,7 @@
   onMount(() => {
     // Fetch comments data from the backend when the component mounts
     axios
-      .get('http://localhost:8001/comments/') // Make a GET request using axios to your backend URL
+      .get('https://comment-187a.onrender.com/comments/') // Make a GET request using axios to your backend URL
       .then((response) => (comments = response.data)) // Extract the data from the response
       .catch((error) => console.error('Error fetching comments:', error));
   });
@@ -47,7 +47,7 @@
     // Send a PUT request to the backend to update the comment
     if (editedComment) {
       axios
-        .put(`http://localhost:8001/comments/${editedComment.id}`, editedComment)
+        .put(`https://comment-187a.onrender.com/comments/${editedComment.id}`, editedComment)
         .then((response) => {
           console.log(response.data); // Log the success message from the backend if needed
           // Update the comments state to reflect the changes
@@ -69,7 +69,7 @@
   const handleDelete = (id: number) => {
     // Send a DELETE request to the backend
     axios
-      .delete(`http://localhost:8001/comments/${id}`)
+      .delete(`https://comment-187a.onrender.com/comments/${id}`)
       .then((response) => {
         console.log(response.data); // Log the success message from the backend if needed
         // After successful deletion, update the comments state to remove the deleted comment from the list

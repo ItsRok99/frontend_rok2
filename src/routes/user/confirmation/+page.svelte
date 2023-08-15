@@ -12,7 +12,7 @@
     const userId = localStorage.getItem("userId");
 
     try {
-      const response = await fetch(`http://localhost:3032/carts/user/${userId}`, {
+      const response = await fetch(`https://cart-5tg9.onrender.com/carts/user/${userId}`, {
         headers: getHeaders(),
       });
 
@@ -30,7 +30,7 @@
         "status": 'pending',
       };
 
-      const postOrderResponse = await fetch('https://localhost:44361/order/post/order', {
+      const postOrderResponse = await fetch('https://order-ps5n.onrender.com/order/post/order', {
         method: 'POST',
         headers: getHeaders(),
         body: JSON.stringify(post_order),
@@ -38,7 +38,7 @@
 
       if (postOrderResponse.status === 200) {
         alert('Order successfully created');
-        const cartDeleteResponse = await fetch(`http://localhost:3032/carts/${data.id}`, {
+        const cartDeleteResponse = await fetch(`https://cart-5tg9.onrender.com/carts/${data.id}`, {
           method: 'DELETE',
           headers: getHeaders(),
         });

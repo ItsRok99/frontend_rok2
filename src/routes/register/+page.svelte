@@ -43,7 +43,7 @@
     };
   
     try {
-      const response = await fetch('http://localhost:8000/users/', {
+      const response = await fetch('https://user-xojp.onrender.com/users/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -61,7 +61,7 @@
         throw new Error(errorData.detail); 
       }
     
-      window.location.href = 'http://localhost:5173/login';
+      window.location.href = 'https://frontend-rok.onrender.com/login';
     } catch (error: unknown) {
       if (error instanceof Error) {
         console.error('Error registering user:', error.message);
@@ -130,6 +130,6 @@
     <button type="submit" class="btn btn-primary">Register</button>
   </form>
   <div class="mt-3">
-    <p>Already have an account? <a href="http://localhost:5173/login">Login here</a>!</p>
+    <p>Already have an account? <a href="https://frontend-rok.onrender.com/login">Login here</a>!</p>
   </div>
 </div>

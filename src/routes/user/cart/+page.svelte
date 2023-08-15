@@ -41,7 +41,7 @@
       const userId = localStorage.getItem('userId');
 
       // Fetch the user's cart
-      const cartResponse = await fetch(`http://127.0.0.1:3032/carts/user/${userId}`, {headers: {
+      const cartResponse = await fetch(`https://cart-5tg9.onrender.com/carts/user/${userId}`, {headers: {
       "Authorization": `Bearer ${jwtTokenFromStorage}`}});
       const cartData: Cart = await cartResponse.json();
 
@@ -49,7 +49,7 @@
 
       // Fetch the products in the cart
       const FetchedcartItems: CartItem[] = await Promise.all(cartData.products_id.map(async (productId) => {
-        const productResponse = await fetch(`http://127.0.0.1:3000/products/${productId}`, {headers: {
+        const productResponse = await fetch(`https://product-045e.onrender.com/products/${productId}`, {headers: {
       "Authorization": `Bearer ${jwtTokenFromStorage}`}});
         const productData: Product = await productResponse.json();
 
@@ -84,7 +84,7 @@
       //Create a new cart for the user if it doesn't exist
       try {
         const userId = localStorage.getItem('userId');
-        const response = await fetch('http://127.0.0.1:3032/carts', {
+        const response = await fetch('https://cart-5tg9.onrender.com/carts', {
           method: 'POST',
           headers: {
             "Authorization": `Bearer ${jwtTokenFromStorage}`,
@@ -109,7 +109,7 @@
     const removeFromCart = async (id: string) => {
       isRemovingProduct = true;
       const userId = localStorage.getItem('userId');
-      const cartResponse = await fetch(`http://127.0.0.1:3032/carts/user/${userId}`, {headers: {
+      const cartResponse = await fetch(`https://cart-5tg9.onrender.com/carts/user/${userId}`, {headers: {
       "Authorization": `Bearer ${jwtTokenFromStorage}`}});
 
       const cartData: Cart = await cartResponse.json();
@@ -119,7 +119,7 @@
       const newProductsId = cartData.products_id.filter((productId) => productId !== id);
 
       cartData.products_id = newProductsId;
-      const response = await fetch(`http://127.0.0.1:3032/carts/${cartData._id}`, {
+      const response = await fetch(`https://cart-5tg9.onrender.com/carts/${cartData._id}`, {
         method: 'PUT',
         headers: {
           "Authorization": `Bearer ${jwtTokenFromStorage}`,

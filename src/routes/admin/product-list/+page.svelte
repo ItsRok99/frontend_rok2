@@ -19,7 +19,7 @@
 
     onMount(() => {
       axios
-        .get('http://localhost:3000/products/')
+        .get('https://product-045e.onrender.com/products/')
         .then((response) => productStore.set(response.data))
         .catch((error) => console.error('Error fetching products:', error));
     });
@@ -32,7 +32,7 @@
 
     const handleDelete = (index: number) => {
       axios
-        .delete(`http://localhost:3000/products/${products[index].id}`)
+        .delete(`https://product-045e.onrender.com/products/${products[index].id}`)
         .then((response) => {
           console.log(response.data);
           productStore.update((prevProducts) => prevProducts.filter((product) => product?.id !== products[index].id));
@@ -54,7 +54,7 @@
     const handleSave = () =>{
       if (editedProduct) {
         axios
-          .put(`http://localhost:3000/products/${editedProduct.id}`, editedProduct)
+          .put(`https://product-045e.onrender.com/products/${editedProduct.id}`, editedProduct)
           .then((response) => {
             console.log(response.data);
             productStore.update((prevProducts) =>

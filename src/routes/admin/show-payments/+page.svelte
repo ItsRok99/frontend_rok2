@@ -9,7 +9,7 @@
 
     // Fetch payments data from the backend when the component mounts
     axios
-      .get('http://localhost:3088/payments/', {
+      .get('https://payment-yvbj.onrender.com/payments/', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -23,7 +23,7 @@
     
     // Send a DELETE request to the backend
     axios
-      .delete(`http://localhost:3088/payments/${id}`, {
+      .delete(`https://payment-yvbj.onrender.com/payments/${id}`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }

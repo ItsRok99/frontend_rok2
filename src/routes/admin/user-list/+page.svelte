@@ -18,7 +18,7 @@
 
   onMount(() => {
     axios
-      .get('http://localhost:8000/users/')
+      .get('https://user-xojp.onrender.com/users/')
       .then((response) => usersStore.set(response.data))
       .catch((error) => console.error('Error fetching users:', error));
   });
@@ -33,7 +33,7 @@
   const handleSave = () => {
     if (editedUser) {
       axios
-        .put(`http://localhost:8000/users/${editedUser.id}`, editedUser)
+        .put(`https://user-xojp.onrender.com/users/${editedUser.id}`, editedUser)
         .then((response) => {
           console.log(response.data);
           usersStore.update((prevUsers) =>
@@ -51,7 +51,7 @@
 
   const handleDelete = (id: number) => {
     axios
-      .delete(`http://localhost:8000/users/${id}`)
+      .delete(`https://user-xojp.onrender.com/users/${id}`)
       .then((response) => {
         console.log(response.data);
         usersStore.update((prevUsers) => prevUsers.filter((user) => user?.id !== id));

@@ -17,7 +17,7 @@
     e.preventDefault();
   
     try {
-      const loginResponse = await fetch('http://localhost:8000/login/', {
+      const loginResponse = await fetch('https://user-xojp.onrender.com/login/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -36,7 +36,7 @@
         localStorage.setItem('userId', data.user_id);
   
         const token = localStorage.getItem('jwtToken');
-        const protectedResponse = await fetch('http://localhost:8000/me/', {
+        const protectedResponse = await fetch('https://user-xojp.onrender.com/me/', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -97,6 +97,6 @@
     <button type="submit" class="btn btn-primary">Login</button>
   </form>
   <div class="mt-3">
-    <p>Don't have an account? <a href="http://localhost:5173/register">Register here</a>!</p>
+    <p>Don't have an account? <a href="https://frontend-rok.onrender.com/register">Register here</a>!</p>
   </div>
 </div>

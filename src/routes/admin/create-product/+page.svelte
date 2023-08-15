@@ -15,7 +15,7 @@
         "price": price,
       };
   
-      fetch("http://localhost:3000/products", {
+      fetch("https://product-045e.onrender.com/products", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
